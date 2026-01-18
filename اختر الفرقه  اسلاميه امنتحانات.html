@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> نظام اختر الفرقه </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        
+        .page {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .btn {
+            padding: 1rem;
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+        /* ألوان الأزرار */
+        
+        .btn-nature {
+            background-color: #3b82f6;
+        }
+        
+        .btn-biology {
+            background-color: #10b981;
+        }
+        
+        .btn-math {
+            background-color: #ef4444;
+        }
+        
+        .btn-arabic {
+            background-color: #f59e0b;
+        }
+        
+        .btn-social {
+            background-color: #8b5cf6;
+        }
+        
+        .btn-islamic {
+            background-color: #059669;
+        }
+        
+        .btn-childhood {
+            background-color: #ec4899;
+        }
+        
+        .btn-special {
+            background-color: #6366f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="mainPage" class="page">
+        <div class="container">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">اختر الفرقه الدرسيه </h1>
+            <p class="text-gray-500 mb-6">سيتم توجيهك إلى صفحة الفرقه عند الضغط</p>
+
+            <div class="btn-group">
+                <!-- تم استبدال الأزرار بروابط مباشرة -->
+                <a href="صفحة سيتم توفير المحتوي .html" class=" btn btn-nature " onclick="redirectTo( 'nature') ">الفرقه الاولي</a>
+                <a href="صفحة سيتم توفير المحتوي .html" class="btn btn-biology " onclick="redirectTo( 'biology') ">الفرقه الثانيه </a>
+                <a href="صفحة سيتم توفير المحتوي .html " class="btn btn-math " onclick="redirectTo( 'math') ">الفرقه الثالثه </a>
+                <a href="صفحة سيتم توفير المحتوي .html " class="btn btn-arabic " onclick="redirectTo( 'arabic') ">الفرقه الرابعه </a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectTo(major) {
+            // كائن يحتوي على الروابط الخاصة بكل شعبة
+            const links = {
+                'nature': '',
+                'biology': 'ضعه هنا',
+                'math': 'ضعه هنا',
+                'arabic': 'ضعه هنا',
+                'social': 'ضعه هنا',
+                'islamic': 'ضعه هنا',
+                'childhood': 'ضعه هنا',
+                'special': 'ضعه هنا'
+            };
+
+            const targetLink = links[major];
+
+            if (targetLink && targetLink !== 'ضعه هنا') {
+                window.location.href = targetLink;
+            } else {
+                alert('اهلا بك ');
+            }
+        }
+    </script>
+</body>

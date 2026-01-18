@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قريبًا | المحتوى التعليمي</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #6a11cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            padding: 50px 30px;
+            border-radius: 20px;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 1.2s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container h1 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .container p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        
+        .highlight {
+            font-weight: 700;
+            color: #ffd369;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #25d366;
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+        }
+        
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px;
+            }
+            .container h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🚀 المحتوى التعليمي قادم قريبًا</h1>
+
+        <p>
+            نعمل حاليًا على تجهيز <span class="highlight">محتوى تعليمي مميز</span> يساعدك على الفهم والتفوق بسهولة. ترقّب الإطلاق قريبًا جدًا.
+        </p>
+
+        <p>
+            إذا كنت بحاجة إلى مساعدة فورية، أو ترغب في إرسال ملفاتك الخاصة بالمقرر لمراجعتها، يسعدنا تواصلك مباشرة.
+        </p>
+
+        <a class="btn" href="https://wa.me/201140810625" target="_blank">
+
+            📩 تواصل الآن عبر واتساب
+        </a>
+
+        <div class="footer">
+            أ. علي التوني <br> واتساب: 01140810625
+        </div>
+    </div>
+
+</body>
+
+</html>

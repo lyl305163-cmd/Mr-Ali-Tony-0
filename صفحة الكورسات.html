@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Ali Tony | منصة الكورسات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary-dark: #2d2f31;
+            --udemy-purple: #a435f0;
+            --stars-yellow: #f3ca8c;
+            --border-color: #d1d7dc;
+        }
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--primary-dark);
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--udemy-purple);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        nav a:hover {
+            color: var(--udemy-purple);
+        }
+        
+        .term-container {
+            margin: 50px 0;
+        }
+        
+        .term-title {
+            font-size: 24px;
+            margin-bottom: 25px;
+            padding-right: 10px;
+            border-right: 4px solid var(--udemy-purple);
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 25px;
+        }
+        
+        .course-card {
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .course-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-img {
+            height: 135px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .course-info {
+            padding: 12px;
+            flex-grow: 1;
+        }
+        
+        .course-info h3 {
+            font-size: 16px;
+            margin: 0 0 5px 0;
+            height: 45px;
+            overflow: hidden;
+        }
+        
+        .instructor {
+            font-size: 12px;
+            color: #6a6f73;
+            margin-bottom: 5px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: var(--stars-yellow);
+            font-size: 14px;
+        }
+        
+        .reviews {
+            font-size: 12px;
+            color: #6a6f73;
+        }
+        
+        .price-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1c1d1f;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #6a6f73;
+            font-size: 14px;
+        }
+        
+        .free-badge {
+            background: #d5efd3;
+            color: #215c1e;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding: 0 12px 15px;
+        }
+        
+        .btn {
+            padding: 10px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+        
+        .btn-view {
+            background-color: white;
+            border: 1px solid var(--primary-dark);
+            color: var(--primary-dark);
+        }
+        
+        .btn-buy {
+            background-color: var(--udemy-purple);
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width:768px) {
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Mr Ali Tony</a>
+            <nav>
+                <ul>
+                    <li><a href="#term1">الفرقة الأولى</a></li>
+                    <li><a href="صفحة سيتم توفير المحتوي .html">الفرقة الثانية</a></li>
+                    <li>
+                        <a href="صفحة سيتم توفير المحتوي .html">الفرقه الثالثه </a>
+                    </li>
+                    <li>
+                        <a href="صفحة سيتم توفير المحتوي .html">الفرقه الرابعه</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- الفرقة الأولى -->
+        <div id="term1" class="term-container">
+            <h2 class="term-title">الفرقة الأولى - الترم الأول</h2>
+            <div class="courses-grid" id="grid-t1"></div>
+
+            <h2 class="term-title" style="margin-top:60px;">الفرقة الأولى - الترم الثاني</h2>
+            <div class="courses-grid" id="grid-t2"></div>
+        </div>
+
+    </main>
+
+    <script>
+        // دالة إنشاء كارد كورس مستقل
+        function createCourseCard(course) {
+            return `
+    <div class="course-card">
+        <div class="course-img">
+            <img src="${course.image}" alt="${course.name}">
+        </div>
+        <div class="course-info">
+            <h3>${course.name}</h3>
+            <p class="instructor">${course.instructor}</p>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="reviews">(${course.reviews})</span>
+            </div>
+            <div class="price-area">
+                <span class="current-price">${course.currentPrice}</span>
+                <span class="old-price">${course.oldPrice}</span>
+                <span class="free-badge">${course.discount}</span>
+            </div>
+        </div>
+        <div class="card-actions">
+            <a href="${course.viewLink}" class="btn btn-view">عرض الكورس</a>
+            <a href="${course.buyLink}" class="btn btn-buy">شراء الآن</a>
+        </div>
+    </div>
+    `;
+        }
+
+        // كل ترم له مصفوفة مستقلة
+        const coursesTerm1 = [{
+            name: "مورفلوجي وتشريح نبات",
+            image: "تشرح نبات.jpg",
+            instructor: "مستر علي توني",
+            reviews: "1200+",
+            currentPrice: "مجاناً",
+            oldPrice: "150 EGP",
+            discount: "خصم 100%",
+            viewLink: "عرض محتوي الكرس .html",
+            buyLink: "عرض محتوي الكرس .html"
+        }, {
+            name: "الكمياء ترم اول نظري",
+            image: "كمياء نظري.jpg",
+            instructor: "مستر علي توني",
+            reviews: "800+",
+            currentPrice: "مجاناً",
+            oldPrice: "180 EGP",
+            discount: "خصم 100%",
+            viewLink: "عرض محتوي الكرس .html",
+            buyLink: "عرض محتوي الكرس .html"
+        }, {
+            name: "علوم سلوكية",
+            image: "علوم سلوكيه .jpg",
+            instructor: "مستر علي توني",
+            reviews: "900+",
+            currentPrice: "مجاناً",
+            oldPrice: "120 EGP",
+            discount: "خصم 100%",
+            viewLink: "عرض محتوي الكرس .html",
+            buyLink: "عرض محتوي الكرس .html"
+        }, {
+            name: "الكمياء عملي ",
+            image: "الكمياء اللعملي 2.jpg",
+            instructor: "مستر علي توني",
+            reviews: "700+",
+            currentPrice: "مجاناً",
+            oldPrice: "200 EGP",
+            discount: "خصم 100%",
+            viewLink: "#",
+            buyLink: "#"
+        }, {
+            name: "رياضيات",
+            image: "الرياضة 1.jpg",
+            instructor: "مستر علي توني",
+            reviews: "1000+",
+            currentPrice: "مجاناً",
+            oldPrice: "160 EGP",
+            discount: "خصم 100%",
+            viewLink: "#",
+            buyLink: "#"
+        }];
+
+        const coursesTerm2 = [{
+            name: " الفيزياء عملي",
+            image: "الفيزياء نظري2.jpg",
+            instructor: "مستر علي توني",
+            reviews: "600+",
+            currentPrice: "مجاناً",
+            oldPrice: "140 EGP",
+            discount: "خصم 100%",
+            viewLink: "#",
+            buyLink: "#"
+        }, {
+            name: "الكمياء عملي ",
+            image: "الكمياء اللعملي 2.jpg",
+            instructor: "مستر علي توني",
+            reviews: "750+",
+            currentPrice: "مجاناً",
+            oldPrice: "160 EGP",
+            discount: "خصم 100%",
+            viewLink: "#",
+            buyLink: "#"
+        }, {
+            name: "الكميا نظري ",
+            image: "الكمياء عملي 1.jpg",
+            instructor: "مستر علي توني",
+            reviews: "500+",
+            currentPrice: "مجاناً",
+            oldPrice: "180 EGP",
+            discount: "خصم 100%",
+            viewLink: "#",
+            buyLink: "#"
+        }, {
+            name: "الفيزياء نظري",
+            image: "فيزياء.jpg",
+            instructor: "مستر علي توني",
+            reviews: "650+",
+            currentPrice: "مجاناً",
+            oldPrice: "190 EGP",
+            discount: "خصم 100%",
+            viewLink: "#",
+            buyLink: "#"
+        }, {
+            name: "الفقه",
+            image: "فقه.jpg",
+            instructor: "مستر علي توني",
+            reviews: "800+",
+            currentPrice: "مجاناً",
+            oldPrice: "200 EGP",
+            discount: "خصم 100%",
+            viewLink: "#",
+            buyLink: "#"
+        }];
+
+        // ملء الكورسات لكل ترم على حدة
+        const gridT1 = document.getElementById('grid-t1');
+        const gridT2 = document.getElementById('grid-t2');
+
+        coursesTerm1.forEach(course => gridT1.innerHTML += createCourseCard(course));
+        coursesTerm2.forEach(course => gridT2.innerHTML += createCourseCard(course));
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محتوى الكورس</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --primary-dark: #2d2f31;
+            --udemy-purple: #a435f0;
+            --accent-color: #f3ca8c;
+            --border-color: #d1d7dc;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background: #fff;
+            color: var(--primary-dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--udemy-purple);
+            text-decoration: none;
+        }
+        
+        .course-title {
+            font-size: 28px;
+            margin: 20px 0;
+        }
+        
+        .lectures-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .lectures-list li {
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+            background: #fafafa;
+        }
+        
+        .lectures-list li:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+        
+        .lectures-list li.active {
+            background: var(--udemy-purple);
+            color: #fff;
+        }
+        
+        .video-container {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 6px;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #eee;
+            color: var(--primary-dark);
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        
+        @media(max-width:768px) {
+            .video-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Mr Ali Tony</a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <a href="index.html" class="btn-back">← العودة للصفحة الرئيسية</a>
+
+        <h1 class="course-title" id="course-name">اسم الكورس</h1>
+
+        <ul class="lectures-list" id="lectures-list">
+            <!-- المحاضرات سيتم توليدها هنا -->
+        </ul>
+
+        <div class="video-container" id="video-container">
+            <iframe src="" id="lecture-frame" allowfullscreen></iframe>
+        </div>
+
+    </main>
+
+    <script>
+        // بيانات الكورسات مع المحاضرات
+        const courses = {
+            "رياضة1": {
+                name: "رياضة ترم أول",
+                lectures: [{
+                    title: "محاضرة 1: أساسيات الرياضة",
+                    link: "https://drive.google.com/file/d/1bqTfz_PdveUeR_OMuLLhBbnEp-iigTHM/view?usp=sharing"
+                }, {
+                    title: "محاضرة 2: تمارين عملية",
+                    link: "https://drive.google.com/file/d/1w3v41Qah37CEXvl6BqOrswuB-PdS-tgt/preview"
+                }, {
+                    title: "محاضرة 3: تغذية الرياضيين",
+                    link: "https://www.youtube.com/embed/5NV6Rdv1a3I"
+                }]
+            },
+            "كيمياء1": {
+                name: "كيمياء ترم أول",
+                lectures: [{
+                    title: "محاضرة 1: الكيمياء العضوية",
+                    link: "https://www.youtube.com/embed/3JZ_D3ELwOQ"
+                }, {
+                    title: "محاضرة 2: الكيمياء الفيزيائية",
+                    link: "https://drive.google.com/file/d/1VcDI8ksME3KqxRUAbqWbIPu6kXZLOb59/preview"
+                }]
+            }
+        };
+
+        // قراءة id الكورس من الرابط
+        const params = new URLSearchParams(window.location.search);
+        const courseId = params.get("id");
+
+        if (courses[courseId]) {
+            const course = courses[courseId];
+            document.getElementById("course-name").innerText = course.name;
+
+            const lecturesList = document.getElementById("lectures-list");
+            const lectureFrame = document.getElementById("lecture-frame");
+
+            course.lectures.forEach((lec, index) => {
+                const li = document.createElement("li");
+                li.innerText = lec.title;
+                li.addEventListener("click", () => {
+                    // إزالة الفئة active من جميع العناصر
+                    lecturesList.querySelectorAll("li").forEach(item => item.classList.remove("active"));
+                    li.classList.add("active");
+                    lectureFrame.src = lec.link;
+                });
+                // اجعل أول محاضرة تظهر تلقائيًا
+                if (index === 0) {
+                    li.classList.add("active");
+                    lectureFrame.src = lec.link;
+                }
+                lecturesList.appendChild(li);
+            });
+
+        } else {
+            document.getElementById("course-name").innerText = "الكورس غير موجود!";
+            document.getElementById("video-container").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
